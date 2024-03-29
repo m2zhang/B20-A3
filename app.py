@@ -1,10 +1,13 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
+from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
 
 @app.route("/")
+@app.route('/home')
 def home():
-    return render_template("template.html")
+    pagename='home'
+    return render_template("create_acc.html", pagename=pagename)
 
 
 if __name__ == "__main__":
